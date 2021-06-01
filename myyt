@@ -1,0 +1,13 @@
+#!/usr/bin/sh
+
+query=$(echo | dmenu -p 'YouTube Search:' | sed -e 's/\ /+/g')
+
+[ -z $query ] && exit
+
+YT_API_KEY="AIzaSyAUJV0EvJjh1RXZGtvlWmyYKlYbmnJDH-4"
+urlstring="https://www.googleapis.com/youtube/v3/search?part=snippet&q=$query&type=video&maxResults=50&key=$YT_API_KEY"
+
+mpv "https://$(curl -s "$urlstring" \
+	| jq -r '.items[] | "\(.snippet.title) -- \(.snippet.channelTitle) -- youtu.be/\(.id.videoId)"' \
+	| dmenu -i -l 42 \
+	| awk '{print $NF}')"

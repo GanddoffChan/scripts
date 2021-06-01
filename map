@@ -1,0 +1,8 @@
+#!/bin/sh
+
+page=$(man -k . | dmenu -i -l 42)
+
+[ -z $page ] && exit
+
+page=$(echo $page | awk '{print $1}')
+man -Tpdf $page | zathura -
