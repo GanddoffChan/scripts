@@ -1,14 +1,15 @@
 #!/bin/sh
+thermometer=🌡️
 while :; do
         vol=$(pamixer --get-volume-human)
         mem=$(free -h | awk '/^Mem/ { print $3 "/" $2 }')
         #now=$(cat /sys/class/power_supply/BAT0/charge_now)
         #full=$(cat /sys/class/power_supply/BAT0/charge_full)
         #BAT=$(echo "scale=4;"$now/$full*100 | bc | cut -c -4)%
-        temp=$(sensors | awk '/Core 0/ {print "🌡" $3}')
+        temp=$(sensors | awk '/Core 0/ {print $3}')
         bat=$(cat /sys/class/power_supply/BAT0/capacity)%
         date=$(date '+(%a) %d %b %y')
         time=$(date '+%H.%M.%S')
-        xsetroot -name " vol = $vol | mem = $mem | temp=$temp | bat = $bat | $date | $time"
+        xsetroot -name " 🔉 $vol | 🐏 $mem | $thermometer $temp | 🔋 $bat | $date | $time"
         sleep 1s
 done
