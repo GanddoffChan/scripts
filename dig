@@ -1,0 +1,49 @@
+#!/bin/sh
+
+mkdir -pv ~/.config/amfora/config.toml
+ln ~/dotfiles/amfora/config.toml ~/.config/amfora/config.toml
+
+mkdir -pv ~/.config/dunst/dunstrc
+ln ~/dotfiles/dunst/dunstrc ~/.config/dunst/dunstrc
+
+mkdir -pv ~/.config/htop/htoprc
+ln ~/dotfiles/htop/htoprc ~/.config/htop/htoprc
+
+mkdir -pv ~/.config/lf/lfrc
+ln ~/dotfiles/lf/lfrc ~/.config/lf/lfrc
+
+mkdir -pv ~/.config/neofetch/config.conf
+ln ~/dotfiles/neofetch/config.conf ~/.config/neofetch/config.conf
+
+mkdir -pv ~/.config/newsboat/config
+ln ~/dotfiles/newsboat/config ~/.config/newsboat/config
+
+mkdir -pv ~/.config/newsboat/urls
+ln ~/dotfiles/newsboat/urls ~/.config/newsboat/urls
+
+mkdir -pv ~/.config/nvim/init.vim
+ln ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
+
+mkdir -pv ~/.config/spotify-tui/config.yml
+ln ~/dotfiles/spotify-tui/config.yml ~/.config/spotify-tui/config.yml
+
+mkdir -pv ~/.config/tspreed/tspreed.rc
+ln ~/dotfiles/tspreed/tspreed.rc ~/.config/tspreed/tspreed.rc
+
+mkdir -pv ~/.config/x11/xinitrc
+ln ~/dotfiles/x11/xinitrc ~/.config/x11/xinitrc
+
+mkdir -pv ~/.config/zathura/zathurarc
+ln ~/dotfiles/zathura/zathurarc ~/.config/zathura/zathurarc
+
+mkdir -pv ~/.config/zsh/.zshenv
+ln ~/dotfiles/zsh/.zshenv ~/.config/zsh/.zshenv
+
+mkdir -pv ~/.config/zsh/.zshrc
+ln ~/dotfiles/zsh/.zshrc ~/.config/zsh/.zshrc
+
+ln ~/dotfiles/redshift.conf ~/.config/redshift.conf
+
+doas ln ~/dotfiles/pacman.conf /etc/pacman.conf
+doas ln ~/dotfiles/paru.conf /etc/paru.conf
+doas ln ~/dotfiles/vconsole.conf /etc/vconsole.conf
