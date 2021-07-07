@@ -1,54 +1,53 @@
 #!/bin/sh
 
-mkdir -pv ~/.config/amfora/config.toml
-ln -v -v ~/dotfiles/amfora/config.toml ~/.config/amfora/config.toml
+mkdir -v ~/.config/amfora
+ln -v ~/dotfiles/amfora/config.toml ~/.config/amfora/config.toml
 
-mkdir -pv ~/.config/dunst/dunstrc
+mkdir -v ~/.config/dunst
 ln -v ~/dotfiles/dunst/dunstrc ~/.config/dunst/dunstrc
 
-mkdir -pv ~/.config/htop/htoprc
+mkdir -v ~/.config/htop
 ln -v ~/dotfiles/htop/htoprc ~/.config/htop/htoprc
 
-mkdir -pv ~/.config/lf/lfrc
+mkdir -v ~/.config/lf
 ln -v ~/dotfiles/lf/lfrc ~/.config/lf/lfrc
 
-mkdir -pv ~/.config/neofetch/config.conf
+mkdir -v ~/.config/neofetch
 ln -v ~/dotfiles/neofetch/config.conf ~/.config/neofetch/config.conf
 
-mkdir -pv ~/.config/newsboat/config
+mkdir -v ~/.config/newsboat
 ln -v ~/dotfiles/newsboat/config ~/.config/newsboat/config
-
-mkdir -pv ~/.config/newsboat/urls
 ln -v ~/dotfiles/newsboat/urls ~/.config/newsboat/urls
 
-mkdir -pv ~/.config/nvim/init.vim
+mkdir -v ~/.config/nvim
 ln -v ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
 
-mkdir -pv ~/.config/picom/picom.conf
+mkdir -v ~/.config/picom
 ln -v ~/dotfiles//picom/picom.conf ~/.config/picom/picom.conf
 
-mkdir -pv ~/.config/qtile/config.py
+mkdir -v ~/.config/qtile
 ln -v ~/dotfiles//qtile/config.py ~/.config/qtile/config.py
 
-mkdir -pv ~/.config/spotifyd/spotifyd.conf
+mkdir -v ~/.config/spotifyd
 ln -v ~/dotfiles//spotifyd/spotifyd.conf ~/.config/spotifyd/spotifyd.conf
 
-mkdir -pv ~/.config/spotify-tui/config.yml
+mkdir -v ~/.config/spotify-tui
 ln -v ~/dotfiles/spotify-tui/config.yml ~/.config/spotify-tui/config.yml
 
-mkdir -pv ~/.config/tspreed/tspreed.rc
+mkdir -v ~/.config/tspreed
 ln -v ~/dotfiles/tspreed/tspreed.rc ~/.config/tspreed/tspreed.rc
 
-mkdir -pv ~/.config/x11/xinitrc
+mkdir -v ~/.config/x11
 ln -v ~/dotfiles/x11/xinitrc ~/.config/x11/xinitrc
+doas ln -v ~/dotfiles/x11/00-mouse.conf /etc/X11/00-mouse.conf
+doas ln -v ~/dotfiles/x11/20-intel.conf /etc/X11/20-intel.conf
+doas ln -v ~/dotfiles/x11/30-touchpad.conf /etc/X11/30-touchpad.conf
 
-mkdir -pv ~/.config/zathura/zathurarc
+mkdir -v ~/.config/zathura
 ln -v ~/dotfiles/zathura/zathurarc ~/.config/zathura/zathurarc
 
-mkdir -pv ~/.config/zsh/.zshenv
+mkdir -v ~/.config/zsh
 ln -v ~/dotfiles/zsh/.zshenv ~/.config/zsh/.zshenv
-
-mkdir -pv ~/.config/zsh/.zshrc
 ln -v ~/dotfiles/zsh/.zshrc ~/.config/zsh/.zshrc
 
 ln -v ~/dotfiles/redshift.conf ~/.config/redshift.conf

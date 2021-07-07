@@ -3,9 +3,6 @@ thermometer=🌡️
 while :; do
         vol=$(pamixer --get-volume-human)
         mem=$(free -h | awk '/^Mem/ { print $3 "/" $2 }')
-        #now=$(cat /sys/class/power_supply/BAT0/charge_now)
-        #full=$(cat /sys/class/power_supply/BAT0/charge_full)
-        #BAT=$(echo "scale=4;"$now/$full*100 | bc | cut -c -4)%
         temp=$(sensors | awk '/Core 0/ {print $3}')
         bat=$(cat /sys/class/power_supply/BAT0/capacity)%
         date=$(date '+(%a) %d %b %y')

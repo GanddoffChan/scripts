@@ -8,4 +8,4 @@ page=$(ls $dir | sed 's/.html//g' | dmenu -i -l 42)
 [ -z $page ] && exit
 
 page=$(echo $page | sed 's/$/.html/')
-qutebrowser $dir$page
+surf $dir$page
