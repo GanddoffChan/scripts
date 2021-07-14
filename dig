@@ -1,57 +1,84 @@
 #!/bin/sh
 
-mkdir -v ~/.config/amfora
-ln -v ~/dotfiles/amfora/config.toml ~/.config/amfora/config.toml
+read -p "Which user's files are to be mugged? "  user &&
 
-mkdir -v ~/.config/dunst
-ln -v ~/dotfiles/dunst/dunstrc ~/.config/dunst/dunstrc
+[ -z "$user" ] && exit 0
 
-mkdir -v ~/.config/htop
-ln -v ~/dotfiles/htop/htoprc ~/.config/htop/htoprc
+mkdir -p /home/$user/.config/amfora
+rm /home/$user/.config/amfora/config.toml
+ln /home/$user/dotfiles/amfora/config.toml /home/$user/.config/amfora/config.toml
 
-mkdir -v ~/.config/lf
-ln -v ~/dotfiles/lf/lfrc ~/.config/lf/lfrc
+mkdir -p /home/$user/.config/dunst
+rm /home/$user/.config/dunst/dunstrc
+ln /home/$user/dotfiles/dunst/dunstrc /home/$user/.config/dunst/dunstrc
 
-mkdir -v ~/.config/neofetch
-ln -v ~/dotfiles/neofetch/config.conf ~/.config/neofetch/config.conf
+mkdir -p /home/$user/.config/htop
+rm /home/$user/.config/htop/htoprc
+ln /home/$user/dotfiles/htop/htoprc /home/$user/.config/htop/htoprc
 
-mkdir -v ~/.config/newsboat
-ln -v ~/dotfiles/newsboat/config ~/.config/newsboat/config
-ln -v ~/dotfiles/newsboat/urls ~/.config/newsboat/urls
+mkdir -p /home/$user/.config/lf
+rm /home/$user/.config/lf/lfrc
+ln /home/$user/dotfiles/lf/lfrc /home/$user/.config/lf/lfrc
 
-mkdir -v ~/.config/nvim
-ln -v ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
+mkdir -p /home/$user/.config/neofetch
+rm /home/$user/.config/neofetch/config.conf
+ln /home/$user/dotfiles/neofetch/config.conf /home/$user/.config/neofetch/config.conf
 
-mkdir -v ~/.config/picom
-ln -v ~/dotfiles//picom/picom.conf ~/.config/picom/picom.conf
+mkdir -p /home/$user/.config/newsboat
+rm /home/$user/.config/newsboat/config
+rm /home/$user/.config/newsboat/urls
+ln /home/$user/dotfiles/newsboat/config /home/$user/.config/newsboat/config
+ln /home/$user/dotfiles/newsboat/urls /home/$user/.config/newsboat/urls
 
-mkdir -v ~/.config/qtile
-ln -v ~/dotfiles//qtile/config.py ~/.config/qtile/config.py
+mkdir -p /home/$user/.config/nvim
+rm /home/$user/.config/nvim/init.vim
+ln /home/$user/dotfiles/nvim/init.vim /home/$user/.config/nvim/init.vim
 
-mkdir -v ~/.config/spotifyd
-ln -v ~/dotfiles//spotifyd/spotifyd.conf ~/.config/spotifyd/spotifyd.conf
+mkdir -p /home/$user/.config/picom
+rm /home/$user/.config/picom/picom.conf
+ln /home/$user/dotfiles//picom/picom.conf /home/$user/.config/picom/picom.conf
 
-mkdir -v ~/.config/spotify-tui
-ln -v ~/dotfiles/spotify-tui/config.yml ~/.config/spotify-tui/config.yml
+mkdir -p /home/$user/.config/qtile
+rm /home/$user/.config/qtile/config.py
+ln /home/$user/dotfiles//qtile/config.py /home/$user/.config/qtile/config.py
 
-mkdir -v ~/.config/tspreed
-ln -v ~/dotfiles/tspreed/tspreed.rc ~/.config/tspreed/tspreed.rc
+mkdir -p /home/$user/.config/spotifyd
+rm /home/$user/.config/spotifyd/spotifyd.conf
+ln /home/$user/dotfiles//spotifyd/spotifyd.conf /home/$user/.config/spotifyd/spotifyd.conf
 
-mkdir -v ~/.config/x11
-ln -v ~/dotfiles/x11/xinitrc ~/.config/x11/xinitrc
-doas ln -v ~/dotfiles/x11/00-mouse.conf /etc/X11/00-mouse.conf
-doas ln -v ~/dotfiles/x11/20-intel.conf /etc/X11/20-intel.conf
-doas ln -v ~/dotfiles/x11/30-touchpad.conf /etc/X11/30-touchpad.conf
+mkdir -p /home/$user/.config/spotify-tui
+rm /home/$user/.config/spotify-tui/config.yml
+ln /home/$user/dotfiles/spotify-tui/config.yml /home/$user/.config/spotify-tui/config.yml
 
-mkdir -v ~/.config/zathura
-ln -v ~/dotfiles/zathura/zathurarc ~/.config/zathura/zathurarc
+mkdir -p /home/$user/.config/tspreed
+rm /home/$user/.config/tspreed/tspreed.rc
+ln /home/$user/dotfiles/tspreed/tspreed.rc /home/$user/.config/tspreed/tspreed.rc
 
-mkdir -v ~/.config/zsh
-ln -v ~/dotfiles/zsh/.zshenv ~/.config/zsh/.zshenv
-ln -v ~/dotfiles/zsh/.zshrc ~/.config/zsh/.zshrc
+mkdir -p /home/$user/.config/x11
+rm /home/$user/.config/x11/xinitrc
+ln /home/$user/dotfiles/x11/xinitrc /home/$user/.config/x11/xinitrc
 
-ln -v ~/dotfiles/redshift.conf ~/.config/redshift.conf
+mkdir -p /etc/X11/xorg.conf.d
+rm /etc/X11/xorg.conf.d/00-mouse.conf
+rm /etc/X11/xorg.conf.d//20-intel.conf
+rm /etc/X11/xorg.conf.d/30-touchpad.conf
+ln /home/$user/dotfiles/x11/00-mouse.conf /etc/X11/xorg.conf.d/00-mouse.conf
+ln /home/$user/dotfiles/x11/20-intel.conf /etc/X11/xorg.conf.d//20-intel.conf
+ln /home/$user/dotfiles/x11/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
 
-doas ln -v ~/dotfiles/pacman.conf /etc/pacman.conf
-doas ln -v ~/dotfiles/paru.conf /etc/paru.conf
-doas ln -v ~/dotfiles/vconsole.conf /etc/vconsole.conf
+mkdir -p /home/$user/.config/zathura
+rm /home/$user/.config/zathura/zathurarc
+ln /home/$user/dotfiles/zathura/zathurarc /home/$user/.config/zathura/zathurarc
+
+mkdir -p /home/$user/.config/zsh
+rm /home/$user/.config/zsh/.zshenv
+rm /home/$user/.config/zsh/.zshrc
+ln /home/$user/dotfiles/zsh/.zshenv /home/$user/.config/zsh/.zshenv
+ln /home/$user/dotfiles/zsh/.zshrc /home/$user/.config/zsh/.zshrc
+
+rm /home/$user/.config/redshift.conf
+rm /etc/pacman.conf
+rm /etc/vconsole.conf
+ln /home/$user/dotfiles/redshift.conf /home/$user/.config/redshift.conf
+ln /home/$user/dotfiles/pacman.conf /etc/pacman.conf
+ln /home/$user/dotfiles/vconsole.conf /etc/vconsole.conf
