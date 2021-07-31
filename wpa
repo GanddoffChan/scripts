@@ -1,0 +1,13 @@
+#!/bin/sh
+
+read -p "wireless interface: " wireless_interface &&
+read -p "ssid: " ssid &&
+read -p "passphrase: " passphrase &&
+
+echo "ctrl_interface=/run/wpa_supplicant" > /etc/wpa_supplicant/wpa_supplicant-$wireless_interface.conf &&
+echo "update_config" > /etc/wpa_supplicant/wpa_supplicant-$wireless_interface.conf &&
+wpa_passphrase $ssid $passphrase >> /etc/wpa_supplicant/$wireless_interface.conf &&
+
+killall wpa_supplicant ;
+rm -rf /run/wpa* ;
+wpa_supplicant -B -i $wireless_interface -c /etc/wpa_supplicant/$wireless_interface.conf

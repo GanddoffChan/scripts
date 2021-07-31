@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/sh
 
 query=$(echo | dmenu -p 'YouTube Search:' | sed -e 's/\ /+/g')
 
