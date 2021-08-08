@@ -75,6 +75,10 @@ rm /home/$user/.config/zsh/.zshenv
 rm /home/$user/.config/zsh/.zshrc
 ln /home/$user/dotfiles/zsh/.zshenv /home/$user/.config/zsh/.zshenv
 ln /home/$user/dotfiles/zsh/.zshrc /home/$user/.config/zsh/.zshrc
+touch /etc/zsh/zshenv
+echo "source /home/$user/.config/zsh/.zshenv" > /etc/zsh/zshenv
+mkdir -p /home/$user/.cache/zsh
+touch /home/$user/.cache/zsh/history
 
 rm /home/$user/.config/redshift.conf
 ln /home/$user/dotfiles/redshift.conf /home/$user/.config/redshift.conf
@@ -84,8 +88,5 @@ touch /home/$user/.config/git/config
 
 mkdir -p /home/$user/.config/wget
 touch /home/$user/.config/wget/wgetrc
-
-touch /etc/zsh/zshenv
-echo "source /home/$user/.config/zsh/.zshenv" > /etc/zsh/zshenv
 
 chown $user /home/$user -R
