@@ -85,4 +85,7 @@ touch /home/$user/.config/git/config
 mkdir -p /home/$user/.config/wget
 touch /home/$user/.config/wget/wgetrc
 
+touch /etc/zsh/zshenv
+echo "source /home/$user/.config/zsh/.zshenv" > /etc/zsh/zshenv
+
 chown $user /home/$user -R
