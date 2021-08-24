@@ -5,74 +5,76 @@ read -p "Which user's files are to be mugged? "  user &&
 [ -z "$user" ] && exit 0
 
 mkdir -p /home/$user/.config/amfora
-rm /home/$user/.config/amfora/config.toml
 ln /home/$user/dotfiles/amfora/config.toml /home/$user/.config/amfora/config.toml
 
 mkdir -p /home/$user/.config/dunst
-rm /home/$user/.config/dunst/dunstrc
 ln /home/$user/dotfiles/dunst/dunstrc /home/$user/.config/dunst/dunstrc
 
+mkdir -p /home/$user/.config/fontconfig
+ln /home/$user/dotfiles/fontconfig/fonts.conf /home/$user/.config/fontconfig/fonts.conf
+
 mkdir -p /home/$user/.config/htop
-rm /home/$user/.config/htop/htoprc
 ln /home/$user/dotfiles/htop/htoprc /home/$user/.config/htop/htoprc
 
+mkdir -p /home/$user/.config/gtk-2.0
+mkdir -p /home/$user/.config/gtk-3.0
+
 mkdir -p /home/$user/.config/lf
-rm /home/$user/.config/lf/lfrc
 ln /home/$user/dotfiles/lf/lfrc /home/$user/.config/lf/lfrc
 
+mkdir -p /home/$user/.config/mpd
+ln /home/$user/dotfiles/mpd/mpd.conf /home/$user/.config/mpd/mpd.conf
+
+mkdir -p /home/$user/.config/msmtp
+
+mkdir -p /home/$user/.config/mpv
+ln /home/$user/dotfiles/mpv/mpv.conf /home/$user/.config/mpv/mpv.conf
+ln /home/$user/dotfiles/mpv/input.conf /home/$user/.config/mpv/input.conf
+
+mkdir -p /home/$user/.config/ncmpcpp
+ln /home/$user/dotfiles/ncmpcpp/config /home/$user/.config/ncmpcpp/config
+ln /home/$user/dotfiles/ncmpcpp/bindings /home/$user/.config/ncmpcpp/bindings
+
 mkdir -p /home/$user/.config/neofetch
-rm /home/$user/.config/neofetch/config.conf
 ln /home/$user/dotfiles/neofetch/config.conf /home/$user/.config/neofetch/config.conf
 
 mkdir -p /home/$user/.config/newsboat
-rm /home/$user/.config/newsboat/config
-rm /home/$user/.config/newsboat/urls
 ln /home/$user/dotfiles/newsboat/config /home/$user/.config/newsboat/config
 ln /home/$user/dotfiles/newsboat/urls /home/$user/.config/newsboat/urls
 
 mkdir -p /home/$user/.config/nvim
-rm /home/$user/.config/nvim/init.vim
 ln /home/$user/dotfiles/nvim/init.vim /home/$user/.config/nvim/init.vim
 
 mkdir -p /home/$user/.config/picom
-rm /home/$user/.config/picom/picom.conf
 ln /home/$user/dotfiles//picom/picom.conf /home/$user/.config/picom/picom.conf
 
 mkdir -p /home/$user/.config/qtile
-rm /home/$user/.config/qtile/config.py
 ln /home/$user/dotfiles//qtile/config.py /home/$user/.config/qtile/config.py
 
 mkdir -p /home/$user/.config/spotifyd
-rm /home/$user/.config/spotifyd/spotifyd.conf
 ln /home/$user/dotfiles//spotifyd/spotifyd.conf /home/$user/.config/spotifyd/spotifyd.conf
 
 mkdir -p /home/$user/.config/spotify-tui
-rm /home/$user/.config/spotify-tui/config.yml
 ln /home/$user/dotfiles/spotify-tui/config.yml /home/$user/.config/spotify-tui/config.yml
 
+mkdir -p /home/$user/.config/sxiv/exec
+ln /home/$user/dotfiles/sxiv/exec/key-handler /home/$user/.config/sxiv/exec/key-handler
+
 mkdir -p /home/$user/.config/tspreed
-rm /home/$user/.config/tspreed/tspreed.rc
 ln /home/$user/dotfiles/tspreed/tspreed.rc /home/$user/.config/tspreed/tspreed.rc
 
 mkdir -p /home/$user/.config/x11
-rm /home/$user/.config/x11/xinitrc
 ln /home/$user/dotfiles/x11/xinitrc /home/$user/.config/x11/xinitrc
 
 mkdir -p /etc/X11/xorg.conf.d
-rm /etc/X11/xorg.conf.d/00-mouse.conf
-rm /etc/X11/xorg.conf.d//20-intel.conf
-rm /etc/X11/xorg.conf.d/30-touchpad.conf
 ln /home/$user/dotfiles/x11/00-mouse.conf /etc/X11/xorg.conf.d/00-mouse.conf
 ln /home/$user/dotfiles/x11/20-intel.conf /etc/X11/xorg.conf.d//20-intel.conf
 ln /home/$user/dotfiles/x11/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
 
 mkdir -p /home/$user/.config/zathura
-rm /home/$user/.config/zathura/zathurarc
 ln /home/$user/dotfiles/zathura/zathurarc /home/$user/.config/zathura/zathurarc
 
 mkdir -p /home/$user/.config/zsh
-rm /home/$user/.config/zsh/.zshenv
-rm /home/$user/.config/zsh/.zshrc
 ln /home/$user/dotfiles/zsh/.zshenv /home/$user/.config/zsh/.zshenv
 ln /home/$user/dotfiles/zsh/.zshrc /home/$user/.config/zsh/.zshrc
 touch /etc/zsh/zshenv
@@ -80,7 +82,6 @@ echo "source /home/$user/.config/zsh/.zshenv" > /etc/zsh/zshenv
 mkdir -p /home/$user/.cache/zsh
 touch /home/$user/.cache/zsh/history
 
-rm /home/$user/.config/redshift.conf
 ln /home/$user/dotfiles/redshift.conf /home/$user/.config/redshift.conf
 
 mkdir -p /home/$user/.config/git

@@ -15,7 +15,7 @@ while True:
     M = d.strftime('%B')
     Y = d.year
 
-    if h == 4 and m == 20 and s >= 10:
+    if h == 4 and m == 20 and s >= 00:
         D = str(D)
         M = str(M)
         Y = str(Y)
