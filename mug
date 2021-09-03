@@ -65,11 +65,18 @@ ln /home/$user/dotfiles/tspreed/tspreed.rc /home/$user/.config/tspreed/tspreed.r
 
 mkdir -p /home/$user/.config/x11
 ln /home/$user/dotfiles/x11/xinitrc /home/$user/.config/x11/xinitrc
-
 mkdir -p /etc/X11/xorg.conf.d
 ln /home/$user/dotfiles/x11/00-mouse.conf /etc/X11/xorg.conf.d/00-mouse.conf
 ln /home/$user/dotfiles/x11/20-intel.conf /etc/X11/xorg.conf.d//20-intel.conf
 ln /home/$user/dotfiles/x11/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
+
+ln /home/$user/dotfiles/xdg/mimeapps.list /home/$user/.config/mimeapss.list
+mkdir -p /home/$user/.local/share/applications
+ln /home/$user/dotfiles/xdg/file.desktop /home/$user/.local/share/applications/file.desktop
+ln /home/$user/dotfiles/xdg/img.desktop /home/$user/.local/share/applications/img.desktop
+ln /home/$user/dotfiles/xdg/mail.desktop /home/$user/.local/share/applications/mail.desktop
+ln /home/$user/dotfiles/xdg/pdf.desktop /home/$user/.local/share/applications/pdf.desktop
+ln /home/$user/dotfiles/xdg/text.desktop /home/$user/.local/share/applications/text.desktop
 
 mkdir -p /home/$user/.config/zathura
 ln /home/$user/dotfiles/zathura/zathurarc /home/$user/.config/zathura/zathurarc
