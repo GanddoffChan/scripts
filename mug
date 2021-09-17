@@ -45,8 +45,11 @@ ln /home/$user/dotfiles/newsboat/urls /home/$user/.config/newsboat/urls
 mkdir -p /home/$user/.config/nvim
 ln /home/$user/dotfiles/nvim/init.vim /home/$user/.config/nvim/init.vim
 
-mkdir -p /home/$user/.config/picom
-ln /home/$user/dotfiles//picom/picom.conf /home/$user/.config/picom/picom.conf
+mkdir -p /etc/portage
+rm /etc/portage/make.conf
+rm /etc/portage/package.mask
+ln /home/$user/dotfiles/portage/make.conf /etc/portage/make.conf
+ln /home/$user/dotfiles/portage/package.mask /etc/portage/package.mask
 
 mkdir -p /home/$user/.config/qtile
 ln /home/$user/dotfiles//qtile/config.py /home/$user/.config/qtile/config.py
